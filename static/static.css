@@ -89,7 +89,7 @@ img {
   background-color: RGBA(0, 136, 8, 1.00);
 }
 
-/* moved to static.css */
+/* lets see it in css before moving to js */
 
 .front, .back {
   transition-property: opacity, transform;
@@ -101,17 +101,17 @@ img {
   opacity: 0;
 }
 
+.card:hover .front {
+  transform: none;
+  opacity: 1;
+}
+
 .back {
   transform: none;
   opacity: 1;
 }
 
-.selected > .front {
-  transform: none;
-  opacity: 1;
-}
-
-.selected > .back {
+.card:hover .back {
   transform: rotateY(-180deg);
   opacity: 0;
 }

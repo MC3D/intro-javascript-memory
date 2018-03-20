@@ -12,14 +12,16 @@
 
 <body>
   <div class="container">
-    <main class="row cards"></main>
+    <main class="cards"></main>
   </div>
 
   <script id="card-template" type="text/x-handlebars-template">
-    <div class="card col-md-2">
-      <div class="front" data-id={{id}}><img class="card-img-top" src={{image}} alt="Card image cap"></div>
-      <div class="back"><img class="card-img-top" src="./images/JavaScript.jpg" alt="Card image cap"></div>
+    {{#each cards}}
+    <div class="card">
+      <div class="front" data-id={{this.id}}><img class="card-img-top" src={{this.img}} alt="card image"></div>
+      <div class="back"><img class="card-img-top" src="./images/logo.png" alt="cover image"></div>
     </div>
+    {{/each}}
   </script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
