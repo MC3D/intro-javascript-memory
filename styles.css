@@ -35,19 +35,19 @@ img {
 /*these have to be in order - css reads top down*/
 
 @media (min-width: 768px) {
-  .container {
+  .wrapper {
     width: 750px;
   }
 }
 
 @media (min-width: 992px) {
-  .container {
+  .wrapper {
     width: 970px;
   }
 }
 
 @media (min-width: 1200px) {
-  .container {
+  .wrapper {
     width: 1170px;
   }
 }
@@ -68,7 +68,7 @@ img {
 }
 
 @media(max-width: 800px) {
-  .card {
+  .playing-card {
     /* four across */
     width: 25%;
     height: 16.666%
