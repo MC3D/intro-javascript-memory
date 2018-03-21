@@ -57,6 +57,7 @@
   ]
 
   // Classes are in fact "special functions"
+  // cleaner and more convenient syntax
   class Game {
     // The constructor method is a special method for creating and initializing an object created within a class
     constructor() {
@@ -75,14 +76,21 @@
       this.buildHTML(this.cardsArray);
 
       // $(".card") returns jQuery wrapped DOM elements - allows us to call jQuery methods
-      this.$memoryCards = $(".card");
+      this.$memoryCards = $(".playing-card");
       // console.log('cards', this.$memoryCards);
 
       this.$memoryCards.on("click", this.cardClicked.bind(this));
+
+      this.$resetButton = $(".reset");
+      this.$resetButton.on("click", this.reset.bind(this));
+
     }
 
     reset() {
       //// ADD RESET METHOD
+      $('#modal').modal('toggle');
+			this.shuffleCards(this.cardsArray);
+			this.setup();
     }
 
     shuffleCards(array) {
@@ -133,7 +141,7 @@
         cards
       };
       var html = template(context);
-      $('.cards').append(html);
+      $('.cards').html(html);
     }
 
     cardClicked(event) {
@@ -157,13 +165,14 @@
         this.matches++;
 
         /// ADD MODAL TO POPUP /////////////////////////////////////////////////
-        this.matches === 12 ? alert('you win') : null;
+        this.matches === 12 ? $('#modal').modal('toggle') : null;
+
       } else {
         let $mismatch = $(".selected").not($(".matched"));
         // $mismatch.toggleClass("selected");
         setTimeout(()=>{
           $mismatch.toggleClass("selected");
-        }, 1000)
+        }, 400)
         this.guess = null;
       }
     }

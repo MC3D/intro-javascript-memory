@@ -7,26 +7,58 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 
+  <!-- Bootstrap is a free and open-source front-end library for designing websites and web applications. It contains HTML- and CSS-based design templates for typography, forms, buttons, navigation and other interface components, as well as optional JavaScript extensions. -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css">
   <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body>
-  <div class="container">
+  <div class="wrapper">
     <main class="cards"></main>
+
+    <!-- Button trigger modal -->
+    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal">
+      Launch demo modal
+    </button> -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <!-- <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div> -->
+          <div class="modal-body">
+            <h2>YOU WIN!</h2>
+            <input type="button" value="Play Again?" class="btn btn-success reset">
+          </div>
+          <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+        </div>
+      </div>
+    </div>
+
+
   </div>
 
   <script id="card-template" type="text/x-handlebars-template">
     {{#each cards}}
-    <div class="card">
-      <div class="front" data-id={{this.id}}><img class="card-img-top" src={{this.img}} alt="card image"></div>
-      <div class="back"><img class="card-img-top" src="./images/logo.png" alt="cover image"></div>
+    <div class="playing-card">
+      <div class="front" data-id={{this.id}}><img class="card-image-top" src={{this.img}} alt="card image"></div>
+      <div class="back"><img class="card-image-top" src="./images/logo.png" alt="cover image"></div>
     </div>
     {{/each}}
   </script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
   <script src="./main.js"></script>
 </body>
 
