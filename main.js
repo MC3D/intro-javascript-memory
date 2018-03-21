@@ -88,7 +88,7 @@
 
     reset() {
       //// ADD RESET METHOD
-      $('#modal').modal('toggle');
+      $('#modal').modal('hide');
 			this.shuffleCards(this.cardsArray);
 			this.setup();
     }
@@ -165,7 +165,7 @@
         this.matches++;
 
         /// ADD MODAL TO POPUP /////////////////////////////////////////////////
-        this.matches === 12 ? $('#modal').modal('toggle') : null;
+        this.matches === 12 ? $('#modal').modal('show') : null;
 
       } else {
         let $mismatch = $(".selected").not($(".matched"));
